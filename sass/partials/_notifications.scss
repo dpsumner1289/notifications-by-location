@@ -1,0 +1,40 @@
+section.notices {
+    .container {
+        .notice_type {
+            padding: 0 1rem;
+            .notice {
+                font-weight: 700;
+                color:#fff;
+                margin-bottom:1rem;
+                &.scheduled {
+                    background: rgb(203,152,34);
+                }
+                &.critical {
+                    background: rgb(202,90,28);
+                }
+                &.non-critical {
+                    background: rgb(31,31,31);
+                }
+                .dte-accordion-title {
+                    .type-title {
+                        justify-content: space-between;
+                        border-bottom: 1px solid rgba(255,255,255,.3);
+                        text-transform: uppercase;
+                    }
+                    .type-title, .notif-title {
+                        padding:.5rem 1rem;
+                    }
+                    h3 {
+                        color:#fff;
+                        padding:0;
+                        margin:0;
+                    }
+                }
+                .dte-accordion-content {
+                    padding:1rem;
+                    font-weight:400;
+                }
+            }
+        }
+    }
+}

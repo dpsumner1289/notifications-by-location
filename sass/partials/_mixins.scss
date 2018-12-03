@@ -1,0 +1,61 @@
+/* FONT SIZE REM */
+@mixin rem($sizeValue: 1) {
+  // font-size: ($sizeValue * $base-font-size) + px;
+  // font-size: $sizeValue + rem;
+  font-size: $sizeValue + em;
+}
+
+/* BACKGROUND RGBA */
+@mixin rgba($color, $opacity: 1) {
+	background: $color;
+	background: rgba($color, $opacity);
+}
+
+/* BACKGROUND HEX TO RGBA */
+@mixin hex_to_rgba($hex_color, $opacity: 1) {
+	background: $hex_color;
+	$red: red($hex_color);
+	$green: green($hex_color);
+	$blue: blue($hex_color);
+	background: rgba($red, $green, $blue, $opacity);
+}
+
+/* DISPLAY INLINE-BLOCK FOR ALL! */
+@mixin ib() {
+	display:-moz-inline-stack;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+
+/* BOX SIZING */
+@mixin box-sizing(){
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* BREAKPOINTS */
+
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (max-width: 70em) { @content ; }
+		// 1120px
+	}
+	@else if $point == laptop {
+		@media (max-width: 64em) { @content ; }
+		// 1024px
+	}
+	@else if $point == tablet {
+		@media (max-width: 50em) { @content ; }
+		// 800px
+	}
+	@else if $point == phablet {
+		@media (max-width: 37.5em)  { @content ; }
+		// 600px
+	}
+	@else if $point == mobileonly {
+		@media (max-width: 37.5em)  { @content ; }
+		// 600px
+	}
+}

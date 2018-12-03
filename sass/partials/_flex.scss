@@ -1,0 +1,133 @@
+.flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	
+	&.row {
+		flex-direction:row;
+        -webkit-flex-flow: row wrap;
+        justify-content: center;
+	}
+	.item_1_3 {
+		width:calc(100%/3);
+		flex-basis:calc(100%/3);
+	}
+	.item_2_3 {
+		width:calc((100%/3)*2);		
+		flex-basis:calc((100%/3)*2);		
+	}
+	.item_5_7 {
+		width:calc((100%/7)*5);
+		flex-basis:calc((100%/7)*5);
+	}
+	.item_2_7 {
+		width:calc((100%/7)*2);
+		flex-basis:calc((100%/7)*2);		
+	}
+	.item_1_2 {
+		width:50%;
+		flex-basis:50%;
+	}
+	.item_2_5 {
+		width:40%;
+		flex-basis:40%
+	}
+	.item_3_5 {
+		width:60%;
+		flex-basis:60%
+	}
+	.item_1_5 {
+		width:20%;
+		flex-basis:20%
+	}
+	.item_4_5 {
+		width:80%;
+		flex-basis:80% !important;
+	}
+	.item_1_4 {
+		width:25%;
+		flex-basis:25%;
+	}
+	.item_3_4 {
+		width:75%;
+		flex-basis:75%;
+	}
+	.item_3_4_2 {
+		width:calc(75%/2);
+		flex-basis:calc(75%/2);
+	}
+	.item_272 {
+		width:272px;
+		flex-basis:272px;
+	}
+	.item_calc-50_136 {
+		width:calc(50% - 136px);
+		flex-basis:calc(50% - 136px);
+	}
+	.item_1_200 {
+		width:calc(100% - 200px);
+		flex-basis: calc(100% - 200px);
+	}
+	.item_200_1 {
+		width:200px;
+		flex-basis:200px;
+	}
+	.flexend {
+		justify-content: flex-end;
+	}
+	.flexstart {
+		justify-content: flex-start;
+	}
+	&.col {
+		flex-direction:column;
+        -webkit-flex-flow: column wrap;
+	}
+	&.vs {
+		align-items: flex-start;
+	}
+	&.vc {
+		align-items:center;
+	}
+	&.vb {
+		align-items: flex-end;
+	}
+	&.hc {
+		justify-content:center;
+	}
+	&.full {
+		width:100%;
+		flex-basis:100%;
+		justify-content: center;
+	}
+	.item_13_25 {
+		width:52%;
+		flex-basis:52%;
+	}
+	.item_12_25 {
+		width:48%;
+		flex-basis:48%;
+	}
+
+	@include breakpoint(tablet) {
+		.item_1_2, .item_12_25, .item_1_3, .item_13_25, .item_3_5, .item_2_5, .item_5_7, .item_2_7, .item_1_5 {
+			width:100% !important;
+			flex-basis:100% !important;
+		}
+		.item_1_4 {
+			width: auto !important;
+			flex-basis: auto !important;
+		}
+		.item_1_200 {
+			width:100% !important;
+			flex-basis: 100% !important;
+		}
+	}
+	@include breakpoint(phablet) {
+		.item_1_4, .item_2_3 {
+			width: 100% !important;
+			flex-basis: 100% !important;
+		}
+	}
+}
